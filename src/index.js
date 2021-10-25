@@ -57,24 +57,53 @@ textFirstCard.textContent = "[REDACTED]";
 
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
+link1FirstCard.setAttribute('href', 'https://www.pexels.com/search/dog');
+link2FirstCard.setAttribute('href', 'https://doggoipsum.com/');
 //  B- Using .setAttribute to change a few attributes
 
 
 // 👉 5- Changing the styling of an element
 //  A- By changing the class names on the element with the classList API
+header.classList.add('sky');
+header.classList.remove('sky');
+header.classList.toggle('sky');
 //  B- By manipulating inline styles on the element
+header.style.fontSize = '2em';
 
 
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
+const blogLink = document.createElement('a');
+blogLink.textContent = 'Blog';
+blogLink.href = '#';
+document.querySelector('nav').appendChild(blogLink);
+blogLink.classList.add('menu-item');
+blogLink.setAttribute('target', '_blank');
 
 
 // 👉 7- Making a copy of the card and appending it to the card group
 // DOM nodes can only exist in one spot in the DOM
 // We cannot append the same copy multiple times
-
+const secondCard = firstCard.cloneNode(true);
+document.querySelector('.card-group').appendChild(secondCard);
 
 // 👉 8- Removing an existing element and putting it back [STRETCH if time allows]
+header.remove();
+document.body.prepend(header);
 
+const data =   {
+    "contact": {
+        "contact-heading" : "Contact",
+        "address" : "123 Way 456 Street Somewhere, USA",
+        "phone" : "1 (888) 888-8888",
+        "email" : "sales@greatidea.io",
+    }
+};
 
+// Grab the elements
+const contactHeading = document.querySelector('.contact-heading');
+const address = document.querySelector('.address');
+const phone = document.querySelector('.phone');
+const email = document.querySelector('.email');
+// Update said elements with data from up above
 // 👉 9- Show to students the insertAdjacentHTML method [STRETCH if time allows]
