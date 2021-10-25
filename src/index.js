@@ -16,30 +16,42 @@ const logoTitle = document.querySelector('#logoTitle');
 // Also could've done...
 // querySelector('.heading');
 // querySelector('h1');
-console.log(firstCard); //?
 
 const firstCard = document.querySelector('.card:nth-of-type(1)');
 // B- finding within one particular element
-console.log(firstCard); //?
-
 const imageFirstCard = firstCard.querySelector('img');
 const titleFirstCard = firstCard.querySelector('h2');
 const subtitleFirstCard = firstCard.querySelector('h3');
-const textFirstCard = null
+const textFirstCard = firstCard.querySelector('p'); // could also be .card-text
 // C- traversing with dot notation
-const link1FirstCard = null
-const link2FirstCard = null
+
+const link1FirstCard = textFirstCard.nextElementSibling;
+const link2FirstCard = link1FirstCard.nextElementSibling;
 
 
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
+const links = document.querySelectorAll('nav a');
 // B- Loop over the links and console.log their text content
+links.forEach(link => console.log(link.textContent));
+/**
+ * for (let i = 0; i < links.length; i++) {
+ *      console.log(links[i].textContent);
+ * }
+ */
 // C- Turn the collection of links into a real array
-// D- Use .filter to find the anchor tag with the textContent of "Home"
+const realLinksArray = Array.from(links);
+console.log(realLinksArray);
 
+// D- Use .filter to find the anchor tag with the textContent of "Home"
+// filter, map, reduce, find
+const home = realLinksArray.find(link => link.textContent === 'Home');
 
 // 👉 3- Changing an element's text content
 //  A- Change the cat-related content into dog-related content
+logoTitle.textContent = "Lambda Dog";
+titleFirstCard.textContent = "Dogs Are the BEST!";
+textFirstCard.textContent = "[REDACTED]";
 //  B- Have the students research online the difference between textContent and innerText
 
 
