@@ -106,4 +106,9 @@ const address = document.querySelector('.address');
 const phone = document.querySelector('.phone');
 const email = document.querySelector('.email');
 // Update said elements with data from up above
+contactHeading.textContent = data["contact"]["contact-heading"];
+address.textContent = data["contact"]["address"];
+phone.textContent = data["contact"]["phone"];
+email.textContent = data["contact"]["email"];
+
 // 👉 9- Show to students the insertAdjacentHTML method [STRETCH if time allows]
