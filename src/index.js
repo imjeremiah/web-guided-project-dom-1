@@ -3,14 +3,28 @@
 //  Newer: querySelector, querySelectorAll
 //  Select the following single elements from the div.card
 
+// class of card-group
+const card = document.getElementsByClassName('card-group');
+// id of inner-card
+const innerCard = document.getElementById('inner-card');
+// get all div elements
+const divs = document.getElementsByTagName('div');
+
 // A- finding across the entire DOM
-const header = null
-const logoTitle = null
-const firstCard = null
+const header = document.querySelector('header'); // CSS selector
+const logoTitle = document.querySelector('#logoTitle');
+// Also could've done...
+// querySelector('.heading');
+// querySelector('h1');
+console.log(firstCard); //?
+
+const firstCard = document.querySelector('.card:nth-of-type(1)');
 // B- finding within one particular element
-const imageFirstCard = null
-const titleFirstCard = null
-const subtitleFirstCard = null
+console.log(firstCard); //?
+
+const imageFirstCard = firstCard.querySelector('img');
+const titleFirstCard = firstCard.querySelector('h2');
+const subtitleFirstCard = firstCard.querySelector('h3');
 const textFirstCard = null
 // C- traversing with dot notation
 const link1FirstCard = null
