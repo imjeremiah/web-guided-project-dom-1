@@ -15,24 +15,49 @@ const header = document.querySelector('header');
 const logoTitle = document.querySelector('#logoTitle');
 const firstCard = document.querySelector('.card:nth-of-type(1)');
 // B- finding within one particular element
-const imageFirstCard = null
-const titleFirstCard = null
-const subtitleFirstCard = null
-const textFirstCard = null
+const imageFirstCard = firstCard.querySelector('img');
+const titleFirstCard = firstCard.querySelector('h2');
+const subtitleFirstCard = firstCard.querySelector('h3');
+const textFirstCard = firstCard.querySelector('p');
 // C- traversing with dot notation
-const link1FirstCard = null
-const link2FirstCard = null
+const link1FirstCard = textFirstCard.nextElementSibling;
+const link2FirstCard = link1FirstCard.nextElementSibling;
 
 
 // 👉 2- Finding collections of elements in the DOM
 // A- Find all the anchor tags inside the nav element
+const links = document.querySelectorAll('nav a');
 // B- Loop over the links and console.log their text content
+links.forEach(function(link) {
+    console.log(link);
+});
+/**
+ * links.forEach(link => console.log(link));
+ */
+/**
+ * for (let i = 0; i < links.length; i++) {
+ *   console.log(links[i]);
+ * }
+ */
 // C- Turn the collection of links into a real array
-// D- Use .filter to find the anchor tag with the textContent of "Home"
+const linksRealArray = Array.from(links);
 
+// D- Use .find to find the anchor tag with the textContent of "Home"
+const foundLink = linksRealArray.find(link => link.textContent === 'Home');
+
+/**
+ * === strict equality, no type coersion '1' === 1 NOOOOO
+ * ==  loose equality, type coersion '1' == 1 never, ever, ever use double equals
+ */
 
 // 👉 3- Changing an element's text content
 //  A- Change the cat-related content into dog-related content
+logoTitle.textContent = "Bloomtech Dog";
+titleFirstCard.textContent = "Bloomtech Blog";
+subtitleFirstCard.textContent = "By CRHarding";
+textFirstCard.textContent = "Lorem ipsum dolor sit amet";
+link2FirstCard.textContent = "Dog Ipsum";
+
 //  B- Have the students research online the difference between textContent and innerText
 
 
