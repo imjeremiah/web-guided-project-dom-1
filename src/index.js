@@ -63,13 +63,19 @@ link2FirstCard.textContent = "Dog Ipsum";
 
 // 👉 4- Changing any property
 //  A- Using dot notation to change a few attributes
+logoTitle.className = "logo heading banana";
+imageFirstCard.src = "https://herepup.com/wp-content/uploads/2015/12/Dog-Advice-1-1.jpg";
 //  B- Using .setAttribute to change a few attributes
-
+link2FirstCard.setAttribute("href", "https://doggoipsum.com/");
+link1FirstCard.setAttribute("href", "https://www.pexels.com/search/dogs/");
 
 // 👉 5- Changing the styling of an element
 //  A- By changing the class names on the element with the classList API
+header.classList.add("sky");
+header.classList.remove("sky");
+header.classList.toggle("sky");
 //  B- By manipulating inline styles on the element
-
+header.style.fontSize = "2em";
 
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
