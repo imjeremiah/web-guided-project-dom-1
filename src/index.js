@@ -79,11 +79,49 @@ header.style.fontSize = "2em";
 
 // 👉 6- Creating new elements from scratch and appending them
 // Create a new link inside the nav for "Blog"
-
+const blogLink = document.createElement("a");
+blogLink.textContent = "Blog";
+blogLink.href = "#";
+document.querySelector("nav").appendChild(blogLink);
+/**
+ * const name = "Casey";
+ * const secondName = name;
+ * 
+ * const obj = { name: "Casey" };
+ * const secondObj = obj;
+ */
 
 // 👉 7- Making a copy of the card and appending it to the card group
 // DOM nodes can only exist in one spot in the DOM
 // We cannot append the same copy multiple times
+const secondCard = firstCard.cloneNode(true);
+document.querySelector(".card-group").appendChild(secondCard);
+
+const data =   {
+    "contact": {
+        "contact-heading" : "Contact",
+        "address" : "123 Way 456 Street Somewhere, USA",
+        "phone" : "1 (888) 888-8888",
+        "email" : "sales@greatidea.io",
+    }
+};
+
+const contactHeading = document.querySelector(".contact-heading");
+const address = document.querySelector(".address");
+const phone = document.querySelector(".phone");
+const email = document.querySelector(".email");
+
+contactHeading.textContent = data["contact"]["contact-heading"];
+address.textContent = data["contact"]["address"];
+/**
+ * dot notation, bracket notation
+ * contactHeading = {
+ *   textContent: blah,
+ *   age: 54
+ * }
+ * const var = "age";
+ * contactHeading[var]
+ */
 
 
 // 👉 8- Removing an existing element and putting it back [STRETCH if time allows]
